@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="container">
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Kontrol Paneli</h1>
+  </div>
+</div>
+<br>
+<a href="/cars/addcar" class="btn btn-danger">Araç ekle</a>
+<br>
+  <a href="/cars/addMarka" class="btn btn-danger">marka ekle</a>
+  <hr>
+  <a href="/cars/addModel" class="btn btn-danger">model ekle</a>
+<br>
+  <br>
+  <br>
+
+                <h3 class="heading-2">Tables</h3>
+                <table class="table table-bordered mb-0">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Başlık</th>
+      <th scope="col">Tarih</th>
+      <th scope="col">Marka</th>
+      <th scope="col">Güncelle</th>
+      <th scope="col">Sil</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    {% for car in cars  %}
+      <tr>
+        <th scope="row">{{car.id}}</th>
+        <td><a href="/cars/car/{{car.id}}">{{car.title}}</a></td>
+        <td>{{car.add_date}}</td>
+        <td>{{car.marka}}</td>
+        <th><a href="/cars/car/update/{{car.id}}" class="btn btn-danger">Güncelle</a></th>
+        <th><a href="/cars/car/delete/{{car.id}}" class="btn btn-danger">Sil</a></th>
+      </tr>
+    {% endfor %}
+
+
+
+
+  </tbody>
+</table>
+</div>
+
+
+
+
+{% endblock body %}

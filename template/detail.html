@@ -1,0 +1,89 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+
+{% block body%}
+<div class="container">
+    <div class="row" style="background-color:black;padding:10px;">
+        <div class="col-md-6">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        {% if car.car_img1 %}
+        <img src="{{car.car_img1.url}}" alt="" class="img-fluid" />
+        {% else %}
+        <img src="{%static "default.jpg"%}" alt="" class="img-fluid" />
+        {% endif %}
+
+    </div>
+    <div class="carousel-item">
+      {% if car.car_img2 %}
+                          <img src="{{car.car_img2.url}}" alt="" class="img-fluid" />
+                          {% else %}
+                            <img src="{%static "default.jpg"%}" alt="" class="img-fluid" />
+                          {% endif %}
+    </div>
+    <div class="carousel-item">
+      {% if car.car_img3 %}
+                          <img src="{{car.car_img3.url}}" alt="" class="img-fluid" />
+                          {% else %}
+                            <img src="{%static "default.jpg"%}" alt="" class="img-fluid" />
+                          {% endif %}
+    </div>
+      <div class="carosel-item">
+          {% if car.car_img4 %}
+                          <img src="{{car.car_img4.url}}" alt="" class="img-fluid" />
+                          {% else %}
+                            <img src="{%static "default.jpg"%}" alt="" class="img-fluid" />
+                          {% endif %}
+      </div>
+
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+             </div>
+
+
+
+        <div class="col-md-6">
+                  <div class="r-car-info-content">
+                    <span class="r-reg-year">{{car.year}}</span>
+                    <h2 class="r-product-name"> {{car.title}} </h2>
+                    <p class="r-product-description">{{car.content}}</p>
+                    <div class="table-responsive">
+                      <table class="table table-bordered">
+                        <tr>
+                          <td>{{car.marka}}</td>
+                          <td>Style SUV Premium </td>
+                        </tr>
+                        <tr>
+                          <td>Model M-Class Sport</td>
+                          <td>Engine V-6 Cylinder</td>
+                        </tr>
+                        <tr>
+                          <td>Kilometer 42.000 KM</td>
+                          <td>Fuel Type Gasoline</td>
+                        </tr>
+                        <tr>
+                          <td>Body Type Sedan Sport</td>
+                          <td>5 Years Service Include</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                  <!-- /r-car-info-content -->
+                </div>
+              </div>
+
+    </div>
+</div>
+
+
+{% endblock body %}
